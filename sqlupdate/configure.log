@@ -1,0 +1,132 @@
+Determining compiler version to use... 
+4.3.2	g++
+CXX=g++(4.3.2) 
+4.3.2	cpp
+CPP=cpp(4.3.2) 
+4.3.2	gcc
+4.3.2	cc
+CC=gcc(4.3.2) 
+
+Checking if the determined compiler works... 
+	conftest.cpp:
+#include <stdio.h>
+int main () { for(int a=0; a<10;++a) { for(int a=0; a<5;++a) { } } puts("ok"); return 0; }
+	g++ conftest.cpp    -o conftest
+Ok
+Checking if your compiler supports --Wall... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wall -o conftest
+Yes
+Checking if your compiler supports --Wundef... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wundef -o conftest
+Yes
+Checking if your compiler supports --Wcast-qual... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wcast-qual -o conftest
+Yes
+Checking if your compiler supports --Wpointer-arith... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wpointer-arith -o conftest
+Yes
+Checking if your compiler supports --Wconversion... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wconversion -o conftest
+Yes
+Checking if your compiler supports --Wwrite-strings... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wwrite-strings -o conftest
+Yes
+Checking if your compiler supports --Wsign-compare... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wsign-compare -o conftest
+Yes
+Checking if your compiler supports --Wredundant-decls... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wredundant-decls -o conftest
+Yes
+Checking if your compiler supports --Winit-self... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Winit-self -o conftest
+Yes
+Checking if your compiler supports --Wextra... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wextra -o conftest
+Yes
+Checking if your compiler supports --Wcast-align... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wcast-align -o conftest
+Yes
+Checking if your compiler supports --Wformat... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wformat -o conftest
+Yes
+Checking if your compiler supports --Waggregate-return... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Waggregate-return -o conftest
+Yes
+Checking if your compiler supports --Wshadow... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wshadow -o conftest
+Yes
+Checking if your compiler supports --Winline... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Winline -o conftest
+Yes
+Checking if your compiler supports --Wstrict-prototypes... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wstrict-prototypes -o conftest
+cc1plus: warning: command line option "-Wstrict-prototypes" is valid for Ada/C/ObjC but not for C++
+Yes
+Checking if your compiler supports --Wmissing-prototypes... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Wmissing-prototypes -o conftest
+cc1plus: warning: command line option "-Wmissing-prototypes" is valid for Ada/C/ObjC but not for C++
+Yes
+Checking if your compiler supports --Woverloaded-virtual... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Woverloaded-virtual -o conftest
+Yes
+Checking if your compiler supports --Weffc++... 
+	conftest.cpp:
+#include <stdio.h>
+int main () {  return 0; }
+	g++ conftest.cpp   -Weffc++ -o conftest
+Yes
+Updating Makefile.sets ...

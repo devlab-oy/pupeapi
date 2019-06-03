@@ -1,0 +1,41 @@
+CPPDEBUG=-g -pipe
+
+# Options for compiling, generally.
+CPPFLAGS=-DVERSION=\"$(VERSION)\" $(CPPDEBUG)
+#         -fmessage-length=0
+
+# C specific warnings
+CCOPTS=$(WARNINGS) $(CWARNINGS)
+# C++ specific warnings
+CXXOPTS=$(WARNINGS) $(CXXWARNINGS)
+
+
+# Optimization
+OPTIM=-O3
+#-march=pentiumpro
+
+# Flags.
+CFLAGS=$(OPTIM) $(CCOPTS)
+CXXFLAGS=$(OPTIM) $(CXXOPTS)
+#-fno-rtti
+
+#LDFLAGS=-pg -ax
+LDFLAGS=-g
+
+#####
+# These options were set by ./configure
+# at Fri May 15 16:30:25 EEST 2009
+# for Linux Devlab-1 2.6.27.21-170.2.56.fc10.x86_64 #1 SMP Mon Mar 23 23:08:10 EDT 2009 x86_64 x86_64 x86_64 GNU/Linux
+# To change, run ./configure again.
+#
+CC=gcc
+CPP=cpp
+CXX=g++
+OPTIM += 
+CPPFLAGS += 
+LDFLAGS += 
+WARNINGS +=  -Wall -Wundef -Wcast-qual -Wpointer-arith -Wconversion -Wwrite-strings -Wsign-compare -Wredundant-decls -Winit-self -Wextra -Wcast-align -Wformat
+CWARNINGS +=  -Waggregate-return -Wshadow -Winline -Wstrict-prototypes -Wmissing-prototypes
+CXXWARNINGS +=  -Woverloaded-virtual -Weffc++
+
+

@@ -1,0 +1,111 @@
+<html><head><meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+ <title>MySQL table patcher</title>
+ <style type="text/css"><!--
+TABLE.toc {border:0px}
+A:link,A:visited{text-decoration:none;color:#2A3B83}
+A:hover{text-decoration:underline;color:#002040}
+A:active{text-decoration:underline;color:#004060;background:#CCD8FF}
+TD.toc   {font-size:80%; font-family:Tahoma; text-align:left}
+H1       {font-size:250%; font-weight:bold} .level1 {text-align:center}
+H2       {font-size:200%; font-weight:bold} .level2 {margin-left:1%}
+H3       {font-size:160%; font-weight:bold} .level3 {margin-left:2%}
+H4       {font-size:145%; font-weight:bold} .level4 {margin-left:3%}
+H5       {font-size:130%; font-weight:bold} .level5 {margin-left:4%}
+H6       {font-size:110%; font-weight:bold} .level5 {margin-left:5%}
+BODY{background:white;color:black}
+CODE{font-family:lucida console,courier new,courier;color:#105000}
+PRE.smallerpre{font-family:lucida console,courier new,courier;font-size:80%;color:#500010;margin-left:30px}
+SMALL    {font-size:70%}
+.nonmail { visibility:hidden;position:absolute; top:0px;left:0px }
+.ismail  { font-weight:normal }
+--></style></head>
+ <body>
+  <h1>MySQL table patcher</h1>
+  <h2 class=level2> 0. Contents </h2>
+  
+  This is the documentation of sqlupdate-1.6.5.2.
+<div class=toc><table cellspacing=0 cellpadding=0 class=toc><tr><td width="50%" valign=middle align=left nowrap class=toc>&nbsp;&nbsp;&nbsp;1. <a href="#h0">Purpose</a><br>&nbsp;&nbsp;&nbsp;2. <a href="#h1">Changes</a><br></td>
+<td width="50%" valign=middle align=left nowrap class=toc>&nbsp;&nbsp;&nbsp;3. <a href="#h2">Copying</a><br>&nbsp;&nbsp;&nbsp;4. <a href="#h3">Requirements</a><br>&nbsp;&nbsp;&nbsp;5. <a href="#download">Downloading</a><br></td>
+</tr></table></div><H2 id="h0" class="level2"><a name="h0"></a>1. Purpose</H2><div class="level2" id="divh0">
+
+ Reads a table creation file (tables.sql) and compares
+ it to what mysqldump gives, and creates SQL clauses
+ to update the database to match the creation file.
+<pre class=smallerpre>sqlupdate v1.6.5 - Copyright (C) Joel Yliluoma (http://iki.fi/bisqwit/)
+
+Usage:
+    sqlupdate [options] &gt;changes.sql
+       (Creates an update script)
+
+Options:
+    -t tablefile          Describes the file containing
+                          the new sql layout. Default: tables.sql
+    -d database           Default: winnie3
+    -h host               Default: localhost
+    -u user               Default: root
+    -i                    Use CREATE INDEX instead of ALTER..ADD KEY
+    -m                    Add comments explaining the differences
+    -c                    Ignore character set differences
+    -p pass
+    -r                    Reverse operation. (new-&gt;old)
+
+Example:
+  ./sqlupdate -t etimgr.sql -d etimgr | mysql -uroot
+
+This program does not update a database. It only
+produces update scripts (which show the differences).
+
+</pre>
+
+</div><H2 id="h1" class="level2"><a name="h1"></a>2. Changes</H2><div class="level2" id="divh1">
+
+ Since version 1.3.0, supports also the InnoDB <code>FOREIGN KEY</code> constraints.
+<p>
+ Since version 1.4.0, supports <code>TINYINT</code>, <code>DATE</code>, <code>TIME</code> and <code>ENUM</code> types.<br>
+ Thanks to Leigh Purdie for this change!
+<p>
+ Version 1.4.1 adds support for <code>CREATE INDEX</code> and field ordering.
+<p>
+ Since version 1.5.0, supports <code>LONGTEXT</code>, <code>MEDIUMTEXT</code>
+ and <code>MEDIUMBLOB</code>. Also now longer forces <code>DEFAULT</code> for
+ <code>AUTOINCREMENT</code> columns.<br>
+ Thanks to Frederic Lamsens for this change!
+<p>
+ In version 1.6.0, a crude support for <code>CHARSET</code> and <code>COLLATE</code>
+ was added.
+<p>
+ In version 1.6.1, support for <code>GEOMETRY</code> and <code>SPATIAL</code>
+ indexes was added.
+<p>
+ Version 1.6.2: Added -c option (ignore character set differences).
+<p>
+ In version 1.6.3, support for more spatial datatypes was added.
+<p>
+ In version 1.6.4, a bug in the support of <code>ENUM</code> was fixed.
+ Thanks to Martin Vít for this change!
+<p>
+ In version 1.6.5, support was added for different index types in <code>PRIMARY KEY</code>.
+
+</div><H2 id="h2" class="level2"><a name="h2"></a>3. Copying</H2><div class="level2" id="divh2">
+
+sqlupdate has been written by Joel Yliluoma, a.k.a.
+<a href="http://iki.fi/bisqwit/">Bisqwit</a>,<br>
+and is distributed under the terms of the
+<a href="http://www.gnu.org/licenses/licenses.html#GPL">General Public License</a> (GPL).
+
+</div><H2 id="h3" class="level2"><a name="h3"></a>4. Requirements</H2><div class="level2" id="divh3">
+
+GNU make is probably required.<br>
+mysqldump is also required. This program handles only MySQL tables indeed.
+
+</div><H2 id="download" class="level2"><a name="download"></a>5. Downloading</H2><div class="level2" id="divdownload">
+   The official home page of sqlupdate
+   is at <a href="http://iki.fi/bisqwit/source/sqlupdate.html">http://iki.fi/bisqwit/source/sqlupdate.html</a>.<br>
+   Check there for new versions.
+</div> <p align=right><small>Generated from
+       <tt>progdesc.php</tt> (last updated: Wed, 25 Mar 2009 16:02:36 +0200)<br>
+  with <tt>docmaker.php</tt> (last updated: Wed, 25 Mar 2009 16:02:36 +0200)<br>
+  at Wed, 25 Mar 2009 16:02:36 +0200</small>
+ </p>
+</body>
+</html>
